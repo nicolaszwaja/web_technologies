@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <title>wordle (nicola's version)</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="words.js"></script>
+    <script src="script01.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&family=Londrina+Outline&family=Noto+Serif+Display:wght@500&family=Quicksand:wght@300&display=swap" rel="stylesheet">
@@ -17,8 +18,8 @@
         <img src="image.jpg" alt="Description of the image">
         <h1>Wordle</h1>
         <h2>Get 6 chances to guess<br>a 5-letter word.</h2>
-        <button class="startButton" id="howTo" onclick="howTo()">How to Play</button>
-        <button class="startButton" id="startGame" onclick="startGame()">Start Game</button>
+        <button tabindex="0" class="startButton" id="howTo" onclick="howTo()">How to Play</button>
+        <button tabindex="0" class="startButton" id="startGame" onclick="startGame()">Start Game</button>
         <h3 id="date-time">Loading...</h3>
         <h3>created by nicola szwaja</h3>
     </div>
@@ -29,12 +30,7 @@
             <button class="iconButton" onclick=" popupClick('stats-popup')"><i class="fa-solid fa-chart-column"></i></button>
             <button class="iconButton" onclick=" popupClick('info-popup')"><i class="fa-regular fa-circle-question"></i></button>
         </div> 
-        <h1 id="header">Wordle</h1>  
-        <div class= container id="main-container"> 
-            <div id="board"></div>
-            <div id="keyboard"></div>
-        </div>
-        <div id="answer"></div>
+        <h1 id="header">Wordle</h1>
     </div>
     <div class="popup" id="info-popup">
         <button class="iconButton" id="closeButton" onclick="closePopups()"><i class="fa-solid fa-xmark"></i></button>
