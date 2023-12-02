@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>wordle (nicola's version)</title>
+    <title>Wordle (Nicola's Version)</title>
     <link rel="stylesheet" href="style.css" />
     <script src="words.js"></script>
     <script src="script01.js"></script>
@@ -11,50 +11,58 @@
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&family=Londrina+Outline&family=Noto+Serif+Display:wght@500&family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&family=Londrina+Outline&family=Montserrat&family=Noto+Serif+Display:wght@500&family=Quicksand:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&family=Londrina+Outline&family=Montserrat&family=Noto+Serif+Display:wght@500&family=Quicksand:wght@300&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container" id="menu-container">
-        <img src="image.jpg" alt="Description of the image">
-        <h1>Wordle</h1>
-        <h2>Get 6 chances to guess<br>a 5-letter word.</h2>
-        <button tabindex="0" class="startButton" id="howTo" onclick="howTo()">How to Play</button>
-        <button tabindex="0" class="startButton" id="startGame" onclick="startGame()">Start Game</button>
-        <h3 id="date-time">Loading...</h3>
-        <h3>created by nicola szwaja</h3>
-    </div>
+    <header>
+        <div class="container" id="menu-container">
+            <img src="image.jpg" alt="Description of the image">
+            <h1>Wordle</h1>
+            <h2>Get 6 chances to guess a 5-letter word.</h2>
+            <button tabindex="0" class="startButton" id="howTo" onclick="howTo()">How to Play</button>
+            <button tabindex="0" class="startButton" id="startGame" onclick="startGame()">Start Game</button>
+            <h3 id="date-time">Loading...</>
+            <h3>Created by Nicola Szwaja</h3>
+        </div>
+    </header>
 
-    <div id="gamePanel"> 
-        <div class="navbar">
-            <button class="iconButton" onclick=" popupClick('settings-popup')"><i class="fa-solid fa-gear"></i></button>
-            <button class="iconButton" onclick=" popupClick('stats-popup')"><i class="fa-solid fa-chart-column"></i></button>
-            <button class="iconButton" onclick=" popupClick('info-popup')"><i class="fa-regular fa-circle-question"></i></button>
-        </div> 
+    <main id="gamePanel"> 
+        <nav class="navbar">
+            <button class="iconButton" onclick="popupClick('settings-popup')"><i class="fa-solid fa-gear"></i></button>
+            <button class="iconButton" onclick="popupClick('stats-popup')"><i class="fa-solid fa-chart-column"></i></button>
+            <button class="iconButton" onclick="popupClick('info-popup')"><i class="fa-regular fa-circle-question"></i></button>
+        </nav> 
         <h1 id="header">Wordle</h1>
-    </div>
+    </main>
+
     <div class="popup" id="info-popup">
         <button class="iconButton" id="closeButton" onclick="closePopups()"><i class="fa-solid fa-xmark"></i></button>
         <h1>How To Play</h1>
-        <h2>Guess the Wordle in 6 tries.</h2>
-        <li>Each guess must be a valid 5-letter word.</li>
-        <li>The color of the tiles will change to show how close your guess was to the word.</li>
+        <p>Guess the Wordle in 6 tries.</p>
+        <ul>
+            <li>Each guess must be a valid 5-letter word.</li>
+            <li>The color of the tiles will change to show how close your guess was to the word.</li>
+        </ul>
         <h2>Examples:</h2>
         <h3>||||</h3>
-        <h3>W is in the word and in the correct spot.</h3>
+        <p>W is in the word and in the correct spot.</p>
         <h3>||||</h3>
-        <h3>I is in the word but in the wrong spot.</h3>
+        <p>I is in the word but in the wrong spot.</p>
         <h3>||||</h3>
-        <h3>U is not in the word in any spot.</h3>
+        <p>U is not in the word in any spot.</p>
     </div>
+
     <div class="popup" id="stats-popup">
         <button class="iconButton" id="closeButton" onclick="closePopups()"><i class="fa-solid fa-xmark"></i></button>
         <h1>Statistics</h1>
-        <h3>Feature not yet available.</h3>
+        <p>Feature not yet available.</p>
     </div>
+
     <div class="popup" id="settings-popup">
         <button class="iconButton" id="closeButton" onclick="closePopups()"><i class="fa-solid fa-xmark"></i></button>
         <h1>Settings</h1>
-        <h3>Feature not yet available.</h3>
+        <p>Feature not yet available.</p>
     </div>  
 </body>
 </html>
