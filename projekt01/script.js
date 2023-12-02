@@ -7,8 +7,8 @@ var col = 0; //current letter for that attempt
 
 var gameOver = false;
 
-var guessList = ["mango"];
-var wordList = ["cigar"];
+var guessList = ["sport", "style", "stare", "swift", "share"];
+var wordList = ["style"];
 
 function processKey() {
     e = { "code" : this.id };
@@ -151,7 +151,7 @@ function update() {
 
         if (correct == width) {
             gameOver = true;
-            endGame();
+            endGameWin();
         }
     }
 
@@ -185,12 +185,27 @@ function update() {
     col = 0; //start at 0 for new row
 }
 
-function endGame() {
-    document.getElementById("answer").style.display = "block";
-    document.getElementById("answer").innerText = "genius";
-    document.getElementById("answer").classList.add("win");
+function endGameWin() {
+    let winPopup = document.createElement("div");
+    winPopup.id = "answer";
+    var mainContainer = document.getElementById("main-container");
+    mainContainer.appendChild(winPopup);
+    winPopup.innerText = "genius";
+    winPopup.style.display = "block";
     setTimeout(function () {
         popupClick('stats-popup');
+    }, 3000); 
+}
+
+function endGameLose() {
+    let losePopup = document.createElement("div");
+    losePopup.id = "answer";
+    var mainContainer = document.getElementById("main-container");
+    mainContainer.appendChild(losePopup);
+    losePopup.innerText = answer;
+    losePopup.style.display = "block";
+    setTimeout(function () {
+        this.popupClick('stats-popup');
     }, 3000); 
 }
 
