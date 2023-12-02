@@ -159,11 +159,6 @@ class Game {
         this.col = 0;
     }
 
-    processKey() {
-        e = { "code" : this.id };
-        this.processInput(e);
-    }
-    
     intializeBoard(){
         var mainContainerDiv = document.createElement("div");
         mainContainerDiv.classList.add("container");
@@ -174,7 +169,6 @@ class Game {
         var keyboardDiv = document.createElement("div");
         keyboardDiv.id = "keyboard";
 
-        // Dodawanie elementów do diva o id="main-container"
         mainContainerDiv.appendChild(boardDiv);
         mainContainerDiv.appendChild(keyboardDiv);
 
@@ -208,14 +202,17 @@ class Game {
                 keyTile.innerText = key;
                 if (key == "Enter") {
                     keyTile.id = "Enter";
-                }
-                else if (key == "⌫") {
+                } else if (key == "⌫") {
                     keyTile.id = "Backspace";
-                }
-                else if ("A" <= key && key <= "Z") {
+                } else if ("A" <= key && key <= "Z") {
                     keyTile.id = "Key" + key; // "Key" + "A";
-                } 
-                keyTile.addEventListener("click", this.processKey);
+                }
+                
+                keyTile.addEventListener("click", (e) => {
+                    e = { "code" : keyTile.id };
+                    console.log(e);
+                    this.processInput(e);
+                })
     
                 if (key == "Enter") {
                     keyTile.classList.add("enter-key-tile");
