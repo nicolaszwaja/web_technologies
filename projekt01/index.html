@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>wordle (nicola's version)</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="words.js"></script>
     <script src="script01.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +30,7 @@
             <button class="iconButton" onclick=" popupClick('stats-popup')"><i class="fa-solid fa-chart-column"></i></button>
             <button class="iconButton" onclick=" popupClick('info-popup')"><i class="fa-regular fa-circle-question"></i></button>
         </div> 
-        <h1 id="header">Wordle</h1>  
-        <div class= container id="main-container"> 
-            <div id="board"></div>
-            <div id="keyboard"></div>
-        </div>
+        <h1 id="header">Wordle</h1>
     </div>
     <div class="popup" id="info-popup">
         <button class="iconButton" id="closeButton" onclick="closePopups()"><i class="fa-solid fa-xmark"></i></button>
