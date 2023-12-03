@@ -229,12 +229,24 @@ class Game {
     }
     createPopup() {
         let newpopup = document.createElement("div");
-        newpopup.id = "answer";
+        newpopup.classList.add("answer");
         var mainContainer = document.getElementById("main-container");
         mainContainer.appendChild(newpopup);
         return newpopup;
     }
-    wordNotFoundPopup(){
+    createReplayButton() {
+        let replayButton = document.createElement("button");
+        replayButton.classList.add("answer");
+        replayButton.classList.add("replay-button");
+        replayButton.innerText = "↻";
+        replayButton.addEventListener("click", function () {
+            location.reload();
+            //TU EWENTUALNIE ZROBIC RESTART GRY
+        });
+        var mainContainer = document.getElementById("main-container");  
+        mainContainer.appendChild(replayButton);
+    }
+    wordNotFoundPopup(){    
         let wordNotFoundPopup = this.createPopup();
         wordNotFoundPopup.style.display = 'block';
         wordNotFoundPopup.classList.add("lose");
@@ -247,17 +259,19 @@ class Game {
         let winPopup = this.createPopup();
         winPopup.classList.add("win");
         winPopup.innerText = "genius";
-        setTimeout(function () {
-            popupClick('stats-popup');
-        }, 3000); 
+        // setTimeout(function () {
+        //     popupClick('stats-popup');
+        // }, 3000); 
+        this.createReplayButton();
     }
     endGameLose(){
         let losePopup = this.createPopup();
         losePopup.classList.add("lose");
         losePopup.innerText = this.word;
-        setTimeout(function () {
-            popupClick('stats-popup');
-        }, 3000); 
+        // setTimeout(function () {
+        //     popupClick('stats-popup');
+        // }, 3000); 
+        this.createReplayButton();
     }
 }
   
@@ -285,9 +299,10 @@ function closePopups(){
     }
 }
 
+//KOD GRY
+
 var height = 6; //number of guesses
 var width = 5; //length of the word
-
 var gameOver = false;
 
 const game = new Game(guessList, wordList);
