@@ -329,4 +329,8 @@ h3 {
 	.popup {
 		width: 90%;
 	}
+	.popup h1{
+		margin: 0px;
+		padding-top: 10%;
+	}
 }
