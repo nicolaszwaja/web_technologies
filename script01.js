@@ -266,12 +266,12 @@ class Game {
     }
     endGameLose(){
         let losePopup = this.createPopup();
-        losePopup.classList.add("lose");
         losePopup.innerText = this.word;
+        losePopup.classList.add("lose");
+        this.createReplayButton();
         // setTimeout(function () {
         //     popupClick('stats-popup');
         // }, 3000); 
-        this.createReplayButton();
     }
 }
   
@@ -297,6 +297,10 @@ function closePopups(){
     for (var i = 0; i < popups.length; i++) {
         popups[i].style.display = "none";
     }
+}
+function howTo(){
+    startGame();
+    popupClick('info-popup');
 }
 
 //KOD GRY
