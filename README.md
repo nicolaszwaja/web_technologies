@@ -16,10 +16,10 @@ Projekt został zaimplementowany przy użyciu następujących technologii:
 
 ### **1. Uruchamianie gry**
 
-Gra Wordle Clone jest dostępna do bezpośredniego uruchomienia w przeglądarce za pośrednictwem GitHub Pages oraz na serwerze uczelni. Wystarczy kliknąć w jeden z poniższych linków:
+Gra Wordle Clone jest dostępna do bezpośredniego uruchomienia w przeglądarce za pośrednictwem GitHub Pages. Wystarczy kliknąć w poniższy link:
 
 [Wordle Clone - Gra Online](https://nicolaszwaja.github.io/web_technologies/)
-...
+
 
 ### **2. Zasady gry**
 
